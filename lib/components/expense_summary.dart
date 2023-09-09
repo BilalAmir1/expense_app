@@ -81,27 +81,35 @@ class ExpenseSummary extends StatelessWidget {
     return Consumer<ExpenseData>(
       builder: (context, value, child) => Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(25.0),
-            child: Row(
-              children: [
-                const Text(
-                  "WEEKS TOTAL : ",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+          Container(
+            width: MediaQuery.of(context).size.width,
+            margin: EdgeInsets.all(12.0),
+            child: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [Colors.blueGrey.shade100, Colors.grey]),
+                  borderRadius: BorderRadius.circular(12.0)),
+              padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+              child: Column(
+                children: [
+                  const Text(
+                    "TOTAL EXPENSE",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
                   ),
-                ),
-                Text(
-                  '${calculateWeekTotal(value, sunday, monday, tuesday, wednesday, thursday, friday, saturday)} Rs',
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
-                )
-              ],
+                  Text(
+                    '${calculateWeekTotal(value, sunday, monday, tuesday, wednesday, thursday, friday, saturday)} Rs',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
           //bar graph

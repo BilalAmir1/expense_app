@@ -51,21 +51,26 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 CupertinoTextField(
-                  controller: newExpenseNameController,
-                  placeholder: 'Expense Name',
-                  decoration: BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: CupertinoColors.black,
-                        width: 0.0,
-                      ),
+                  prefix: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 2,
+                    ),
+                    child: Icon(
+                      Icons.description,
                     ),
                   ),
+                  controller: newExpenseNameController,
+                  placeholder: 'Expense Name',
+                  maxLength: 26,
                 ),
                 SizedBox(height: 10),
                 CupertinoTextField(
                   controller: newExpenseAmountController,
+                  prefix: Icon(
+                    CupertinoIcons.money_dollar,
+                  ),
                   placeholder: 'Amount',
+                  maxLength: 4,
                   keyboardType:
                       const TextInputType.numberWithOptions(decimal: true),
                   inputFormatters: [
@@ -81,14 +86,6 @@ class _HomePageState extends State<HomePage> {
                       newExpenseAmountController.text = '0.0';
                     }
                   },
-                  decoration: BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: CupertinoColors.black,
-                        width: 0.0,
-                      ),
-                    ),
-                  ),
                 ),
               ],
             ),
@@ -146,7 +143,11 @@ class _HomePageState extends State<HomePage> {
     return Consumer<ExpenseData>(
       builder: (context, value, child) => Scaffold(
           backgroundColor: Colors.grey[200],
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
           floatingActionButton: FloatingActionButton(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16.0)),
             onPressed: addNewExpense,
             child: Icon(Icons.add),
           ),

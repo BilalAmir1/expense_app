@@ -1,5 +1,5 @@
 import 'package:expense_app/data/expense_data.dart';
-import 'package:expense_app/home_page.dart';
+import 'package:expense_app/splashScreen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -26,6 +26,6 @@ class MyApp extends StatelessWidget {
               useMaterial3: true,
             ),
             debugShowCheckedModeBanner: false,
-            home: HomePage()));
+            home: SplashScreen()));
   }
 }
