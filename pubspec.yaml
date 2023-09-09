@@ -40,6 +40,13 @@ dependencies:
   hive_flutter: ^1.1.0
   flutter_slidable: ^3.0.0
   lottie: ^2.6.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon.png"
+  remove_alpha_ios: true
 
 dev_dependencies:
   flutter_test:

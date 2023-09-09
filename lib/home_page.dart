@@ -57,6 +57,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: Icon(
                       Icons.description,
+                      color: Colors.grey.shade400,
                     ),
                   ),
                   controller: newExpenseNameController,
@@ -68,9 +69,10 @@ class _HomePageState extends State<HomePage> {
                   controller: newExpenseAmountController,
                   prefix: Icon(
                     CupertinoIcons.money_dollar,
+                    color: Colors.grey.shade400,
                   ),
                   placeholder: 'Amount',
-                  maxLength: 4,
+                  maxLength: 6,
                   keyboardType:
                       const TextInputType.numberWithOptions(decimal: true),
                   inputFormatters: [
@@ -150,6 +152,7 @@ class _HomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.circular(16.0)),
             onPressed: addNewExpense,
             child: Icon(Icons.add),
+            backgroundColor: Colors.blueGrey.shade100,
           ),
           body: ListView(
             children: [
